@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Threadmark spike",
+  "version": "0.0.1",
+  "content_scripts": [
+    {
+      "matches": ["file:///*"],
+      "js": ["main.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["file:///*"],
+      "js": ["iso.js"],
+      "run_at": "document_end",
+      "world": "ISOLATED"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Threadmark settings</title>
+    <style>
+      body {
+        max-width: 620px;
+        margin: 40px auto 60px;
+        padding: 0 20px;
+        font: 14px/1.6 ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
+        color: #1f2328;
+      }
+      h1 {
+        font-size: 19px;
+      }
+      label {
+        display: block;
+        margin: 18px 0 4px;
+        font-weight: 600;
+      }
+      input,
+      select {
+        font: inherit;
+        padding: 6px 8px;
+        border: 1px solid #d9d7d2;
+        border-radius: 7px;
+        width: 260px;
+      }
+      .hint {
+        color: #5c6470;
+        font-size: 12.5px;
+        margin: 4px 0 0;
+      }
+      #saved {
+        color: #2c6e46;
+        font-size: 12.5px;
+        margin-inline-start: 8px;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      #saved.show {
+        opacity: 1;
+      }
+      ul.disabled {
+        list-style: none;
+        padding: 0;
+        font-family: ui-monospace, Menlo, monospace;
+        font-size: 12px;
+      }
+      ul.disabled li {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        border-bottom: 1px solid #eee;
+        padding: 5px 0;
+        word-break: break-all;
+      }
+      button {
+        font: inherit;
+        border: 1px solid #d9d7d2;
+        background: #fff;
+        border-radius: 6px;
+        padding: 2px 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Threadmark settings <span id="saved">saved</span></h1>
+
+    <label for="name">Your name in replies</label>
+    <input id="name" placeholder="dan" />
+    <p class="hint">
+      Written as <code>**name** · date — message</code> in a thread. Agents put their own name, so this is how you tell your replies
+      apart from theirs.
+    </p>
+
+    <label for="theme">Theme</label>
+    <select id="theme">
+      <option value="system">Follow the system</option>
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+
+    <label for="sample">Sample document</label>
+    <p class="hint">
+      <a href="sample.html" target="_blank">Open the sample</a> to see the format — markers, threads, an agent reply — without
+      touching a real file.
+    </p>
+
+    <label>Files Threadmark leaves alone</label>
+    <p class="hint">Nothing is saved here automatically; remove a path to take it back over.</p>
+    <ul class="disabled" id="disabled"></ul>
+
+    <script src="options.js"></script>
+  </body>
+</html>

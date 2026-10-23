@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Threadmark",
+  "version": "0.2.0",
+  "description": "Read markdown in Chrome and leave review threads in the file itself.",
+  "icons": {},
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Threadmark"
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "file:///*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
